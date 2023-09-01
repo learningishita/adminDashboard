@@ -1,0 +1,28 @@
+@import "../../styles/styles.scss";
+
+.menu-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 40px 20px 10px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  background: #f2f8fe;
+  .menu-first-section {
+    @include flex(row, center, space-between);
+    width: 100%;
+  }
+  .menu-text {
+    color: #1c4980;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 19.6px */
+  }
+}

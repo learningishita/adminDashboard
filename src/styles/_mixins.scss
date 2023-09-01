@@ -1,0 +1,237 @@
+@mixin flex($direction: row, $align-items: center, $justify-content: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin container {
+  margin: auto;
+  max-width: 1920px;
+}
+
+@mixin s_container {
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 0 32px;
+
+  @include l_desktop {
+    max-width: 1320px;
+  }
+
+  @include s_tablet {
+    padding: 0 16px;
+  }
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// FONT ISSUE NOT MATCHING NEED TO GRAB NEW FONTS
+@mixin RegularSans {
+  font-family: 'Regular Sans', sans-serif;
+  font-style: normal;
+}
+@mixin MediumSans {
+  font-family: 'Medium Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+@mixin SemiSans {
+  font-family: 'Semi Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+@mixin BoldSans {
+  font-family: 'Bold Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin auth-heading {
+  @include Playfair;
+  line-height: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -3%;
+  font-size: 2rem;
+  @include s_tablet {
+    font-size: 1.8rem;
+  }
+}
+
+@mixin auth-subheading {
+  @include Inter;
+  line-height: 1.875rem;
+  font-weight: 400;
+  font-size: 1rem;
+  @include s_tablet {
+    font-size: 0.9rem;
+  }
+}
+@mixin validation-text {
+  color: #ff0000;
+  font-size: 0.875rem;
+}
+
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin larger_desktop {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+@mixin l_desktop {
+  @media (max-width: 1536px) {
+    @content;
+  }
+}
+
+@mixin sm_desktop {
+  @media (max-width: 1350px) {
+    @content;
+  }
+}
+
+@mixin m_desktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin s_desktop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin l_tablet {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin m_tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin sm_tablet {
+  @media (min-width: 601px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin s_tablet {
+  @media (max-width: 550px) {
+    @content;
+  }
+}
+@mixin l_mobile {
+  @media (max-width: 425px) {
+    @content;
+  }
+}
+@mixin m_mobile {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+@mixin s_mobile {
+  @media (max-width: 350px) {
+    @content;
+  }
+}
+@mixin xs_mobile {
+  @media (max-width: 300px) {
+    @content;
+  }
+}
+@mixin safari_specific_style {
+  @supports (-webkit-touch-callout: none) {
+    @content;
+  }
+}
+@mixin hide_scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  & {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@mixin underline_animation {
+  overflow: hidden;
+  background: linear-gradient(currentColor 0 0) 0 100% / var(--d, 0) 1px
+    no-repeat;
+  transition: 0.5s;
+  &:hover {
+    --d: 100%;
+  }
+}
+
+@mixin bounceInRight($duration: 0.5s) {
+  @-webkit-keyframes bounceInRight {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(2000px);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+    }
+  }
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  @keyframes bounceInRight {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(2000px);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+    }
+  }
+}
+
+@mixin remove_userTapColor {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@mixin ellipsis($line: 4) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line; /* Set the number of lines to be shown */
+  -webkit-box-orient: vertical;
+}

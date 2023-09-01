@@ -1,0 +1,42 @@
+@import "../styles/styles.scss";
+
+.layout-container {
+  height: 100vh;
+  display: flex;
+}
+
+.layout-sidebar {
+  width: 12%;
+  height: 100%;
+  @include m_desktop {
+    display: none;
+  }
+}
+
+.layout-topbar-dashboard {
+  width: 87%;
+  height: 100%;
+  /* background-color: red; */
+  @include m_desktop {
+    width: 100%;
+  }
+}
+
+.layout-topbar {
+  height: 70px;
+  width: 100%;
+}
+
+.layout-dashboard {
+  height: calc(100vh - 70px);
+  width: 100%;
+  @include m_desktop {
+    display: flex;
+    padding: 20px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 40px;
+    height: calc(100vh - 120px);
+  }
+}

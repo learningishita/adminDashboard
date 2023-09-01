@@ -1,0 +1,18 @@
+@import "../../styles/styles.scss";
+
+.modal-custom-scss {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  position: relative;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 70%;
+  background: #FFF;
+  @include m_desktop {
+    height: 100%;
+    width: 100%;
+  }
+}

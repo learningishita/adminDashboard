@@ -1,0 +1,67 @@
+@import "../../styles/styles.scss";
+
+$primary-color: #1c4980;
+
+@mixin flex-center($justify, $align, $gap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin circle($size, $background) {
+  width: $size;
+  height: $size;
+  padding: 10px;
+  background: $background;
+  border-radius: 50%;
+}
+
+.dahboard-container {
+  @include m_desktop {
+    width: 90%;
+  }
+}
+
+.cards-container {
+  @include flex(row, center, flex-start);
+  flex-wrap: wrap;
+  gap: 30px;
+  @include m_desktop {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.assesment-heading {
+  color: #1c4980;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 25.2px */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.add-assesment-section {
+  padding-bottom: 50px;
+}
+
+.my-assesment-flex {
+  @include flex(row, center, space-between);
+  margin-top: 39px;
+  @include m_desktop {
+    margin-top: 0px;
+  }
+  .my-assesment-images {
+    display: none;
+    @include m_desktop {
+      @include flex(row, center, space-evenly);
+      .my-assesment-img {
+        padding-left: 12px;
+      }
+    }
+  }
+}

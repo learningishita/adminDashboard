@@ -1,0 +1,89 @@
+@mixin aspect-video {
+  aspect-ratio: 16/9;
+  @supports not (aspect-ratio: 16 / 9) {
+    &::before {
+      float: left;
+      padding-top: 56.25%;
+      content: '';
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+  }
+}
+
+@mixin aspect-square {
+  &::before {
+    float: left;
+    padding-top: 100%;
+    content: '';
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+@mixin aspect-half {
+  aspect-ratio: 2/1;
+  @supports not (aspect-ratio: 2/1) {
+    &::before {
+      float: left;
+      padding-top: 50%;
+      content: '';
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+  }
+}
+
+@mixin aspect-half-width {
+  &::before {
+    float: left;
+    padding-top: 165%;
+    content: '';
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+@mixin aspect-fourth {
+  &::before {
+    float: left;
+    padding-top: 75%;
+    content: '';
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+@mixin aspect-third {
+  &::before {
+    float: left;
+    padding-top: 33.33%;
+    content: '';
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}

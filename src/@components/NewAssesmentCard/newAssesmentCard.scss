@@ -1,0 +1,98 @@
+@import "../../styles/styles.scss";
+
+.assessment-card {
+  // width: 388px;
+  width: 30%;
+  height: 209px;
+  padding: 16px;
+  background: #f6f8fa;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 0.5px #dadce0 dotted;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: #1c4980;
+  cursor: pointer;
+  @include m_desktop{
+    width: 100%;
+  }
+
+  .gradient-background {
+    width: 149px;
+    height: 149px;
+    background: linear-gradient(
+      234deg,
+      #fce4d0 0%,
+      rgba(251.81, 227.58, 207.75, 0) 100%
+    );
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      padding: 10px;
+      background: white;
+      border-radius: 72px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+
+      .avatar-icon {
+        width: 40px;
+        height: 40px;
+        position: relative;
+
+        div {
+          width: 40px;
+          height: 40px;
+          left: 0;
+          top: 0;
+          position: absolute;
+          background: #0073e6;
+
+          &:nth-child(2) {
+            width: 23.33px;
+            height: 23.33px;
+            left: 8.33px;
+            top: 8.33px;
+            position: absolute;
+            background: #0073e6;
+          }
+        }
+      }
+    }
+
+    .title {
+      color: #1c4980;
+      text-align: center;
+      font-family: Inter;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    .description {
+      align-self: stretch;
+      text-align: center;
+      color: #1c4980;
+      font-size: 12px;
+      font-family: Inter;
+      font-weight: 500;
+      word-wrap: break-word;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+@import "../../../styles/styles.scss";
+
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  width: 99%;
+
+  // overflow: hidden;
+  @include m_desktop{
+    overflow: auto;
+  }
+  @include s_desktop{
+    display: none;
+  }
+
+  .overview-title {
+    color: #1c4980;
+    font-size: 18px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 25.2px;
+    word-wrap: break-word;
+    margin-top: 20px;
+  }
+
+  .overview-card {
+    width: 100%;
+    border-radius: 12px;
+    // overflow: hidden;
+    border: 0.5px #dadce0 solid;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1px;
+
+    .overview-section {
+      padding: 16px 20px;
+      // background: white;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 16px;
+      display: inline-flex;
+
+      .section-title {
+        color: #1c4980;
+        font-size: 14px;
+        font-family: Inter;
+        font-weight: 600;
+        line-height: 19.6px;
+        word-wrap: break-word;
+      }
+
+      .section-content {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+
+        .icon-container {
+          width: 40px;
+          height: 40px;
+          background: #ebe8fd;
+          border-radius: 8px;
+          overflow: hidden;
+          color: #6548ee;
+          @include flex();
+        }
+
+        .section-value {
+          color: #1c4980;
+          font-family: Inter;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 140%;
+        }
+
+        .section-data-container {
+          @include flex(row, center, space-between);
+          .section-data {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 1px;
+            display: inline-flex;
+  
+            .data-value-flex {
+              @include flex();
+            }
+  
+            .data-value {
+              color: #1c4980;
+              font-size: 20px;
+              font-family: Inter;
+              font-weight: 700;
+              line-height: 28px;
+              word-wrap: break-word;
+            }
+  
+            .data-increase {
+              color: #05c165;
+              font-size: 12px;
+              font-family: Inter;
+              font-weight: 500;
+              line-height: 16.8px;
+              word-wrap: break-word;
+              margin-left: 2px;
+            }
+  
+            .data-label {
+              color: #1c4980;
+              font-size: 12px;
+              font-family: Inter;
+              font-weight: 500;
+              line-height: 16.8px;
+              word-wrap: break-word;
+            }
+          }
+        }
+      }
+    }
+
+    .section-divider {
+      width: 0px;
+      align-self: stretch;
+      border: 0.5px #dadce0 solid;
+    }
+  }
+}
