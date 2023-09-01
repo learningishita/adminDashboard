@@ -2,7 +2,7 @@ import React from "react";
 import "./SidebarNavigation.scss";
 
 export default function SidebarNavigation(props) {
-  const { image, text, alt, selected, ...rest } = props;
+  const { image, text, alt, selected } = props;
   return (
     <div
       className={`sidebar-navigation-container ${selected && "selected-tab"}`}

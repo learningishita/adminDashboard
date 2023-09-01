@@ -33,7 +33,7 @@ const SelectChips = () => {
   const [inputValue, setInputValue] = useState("");
 
   const handleKeyDown = (event) => {
-    if (event.key === "Enter" && !allChipData.includes(inputValue) && inputValue != '') {
+    if (event.key === "Enter" && !allChipData.includes(inputValue) && inputValue !== '') {
       setAllChipData([...allChipData, inputValue]);
     }
   };

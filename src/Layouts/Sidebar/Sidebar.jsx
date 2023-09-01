@@ -5,7 +5,7 @@ import note_alt from "../../assets/images/note_alt.svg";
 import quiz from "../../assets/images/quiz.svg";
 import admin_meds from "../../assets/images/admin_meds.svg";
 import SidebarNavigation from "../../@components/SidebarNavigation/SidebarNavigation";
-import { roleName, roundStatus } from "../../constant/constant";
+import {roundStatus } from "../../constant/constant";
 
 export default function Sidebar() {
   return (
@@ -13,7 +13,7 @@ export default function Sidebar() {
       <section className="sidebar-section-one">
         <SidebarNavigation
           image={dashboard_sidebar}
-          alt={"dashboard-image"}
+          alt={"dashboard"}
           text={"Dashboard"}
         />
         <SidebarNavigation selected={true} image={note_alt} alt={"note"} text={"Assessment"} />
@@ -30,7 +30,7 @@ export default function Sidebar() {
         </div>
 
         <div className="section-round-status">
-          <img src={admin_meds} alt="Meds Image" />
+          <img src={admin_meds} alt="Meds" />
           <p className="round-status">{roundStatus}</p>
         </div>
       </section>

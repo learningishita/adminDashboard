@@ -48,7 +48,7 @@ export default function Card(props) {
 
         <div className="footer-actions">
           <div className="action-button">
-            <img src={link} />
+            <img alt="" src={link} />
             <div className="action-text">Share</div>
           </div>
           <Avatar className="avatar-actions" name="L P" size="30" round={true} />

@@ -5,10 +5,10 @@ import dashboard_sidebar from "../../assets/images/dashboard_sidebar.svg";
 import note_alt from "../../assets/images/note_alt.svg";
 import quiz from "../../assets/images/quiz.svg";
 import admin_meds from "../../assets/images/admin_meds.svg";
-import { roleName, roundStatus } from "../../constant/constant";
+import {roundStatus } from "../../constant/constant";
 
 const NavigationItems = (props) => {
-  const { image, text, alt, selected, ...rest } = props;
+  const { image, text, alt, selected} = props;
   return (
     <div
       style={{
@@ -57,7 +57,7 @@ export default function HamBurgerMenu(props) {
       <section style={{width:"90%"}} className="sidebar-section-one">
         <NavigationItems
           image={dashboard_sidebar}
-          alt={"dashboard-image"}
+          alt={"dashboard"}
           text={"Dashboard"}
         />
         <NavigationItems
@@ -75,7 +75,7 @@ export default function HamBurgerMenu(props) {
 
       <section style={{display:"flex", flexDirection:"row", justifyContent:"space-between", width:"100%"}} className="section-admin">
         <div style={{display:"flex", flexDirection:"row", width:"100%"}} className="section-round-status">
-          <img src={admin_meds} alt="Meds Image" />
+          <img src={admin_meds} alt="Medsimg" />
           <p style={{marginLeft:"8px"}} className="round-status">{roundStatus}</p>
         </div>
 
